@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:angular-with-ant-design": "node dist/angular-with-ant-design/server/server.mjs",
-    "postinstall": "npm install --legacy-peer-deps"
+    "vercel-build": "npm install --legacy-peer-deps && npm run build",
+    "postinstall": ""
   },
   "private": true,
   "dependencies": {

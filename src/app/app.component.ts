@@ -32,7 +32,6 @@ import {NzIconModule} from 'ng-zorro-antd/icon';
     NzHeaderComponent,
     NzBreadCrumbItemComponent,
     NzFooterComponent,
-    RouterLink,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
