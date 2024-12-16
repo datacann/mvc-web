@@ -1,10 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterOutlet } from '@angular/router';
+import {Router, RouterLink, RouterOutlet} from '@angular/router';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
 import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
+import {
+  NzContentComponent,
+  NzFooterComponent,
+  NzHeaderComponent,
+  NzLayoutComponent,
+  NzLayoutModule
+} from 'ng-zorro-antd/layout';
+import {NzBreadCrumbComponent, NzBreadCrumbItemComponent} from 'ng-zorro-antd/breadcrumb';
+import {NzMenuDirective, NzMenuModule} from 'ng-zorro-antd/menu';
+import {NzIconModule} from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +21,18 @@ import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
     NzButtonModule,
     NzModalModule,
     NzMessageModule,
-    // Animasyon modüllerini buraya da eklemeniz gerekebilir
-    CommonModule
+    CommonModule,
+    NzMenuModule,
+    RouterOutlet,
+    NzContentComponent,
+    NzBreadCrumbComponent,
+    NzIconModule,
+    NzLayoutModule,
+    NzLayoutComponent,
+    NzHeaderComponent,
+    NzBreadCrumbItemComponent,
+    NzFooterComponent,
+    RouterLink,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -21,13 +40,10 @@ import { NzModalModule, NzModalService } from 'ng-zorro-antd/modal';
 export class AppComponent {
   title = 'angular-with-ant-design';
 
-  constructor(private modal: NzModalService, private message: NzMessageService) {}
+  constructor(private modal: NzModalService, private message: NzMessageService,private router: Router) {}
 
-  showModal(): void {
-    this.modal.info({
-      nzTitle: 'Modal Başlığı',
-      nzContent: '<p>Bu, bir ng-zorro modal örneğidir.</p>',
-      nzOnOk: () => this.message.success('OK tıklandı!')
-    });
+
+  navigate(path: string) {
+    this.router.navigate([path]);
   }
 }

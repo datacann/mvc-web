@@ -1,0 +1,29 @@
+.dropdown-btn {
+  margin-bottom: 15px;
+}
+
+.nz-dropdown-menu {
+  margin-top: 5px;
+}
+
+.info-place{
+  margin-right: 15px;
+}
+
+
+.selected-item-label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #007bff;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background-color: #f0f8ff;
+  cursor: pointer;
+}
+
+.selected-item-label:hover {
+  background-color: #e6f7ff;
+}

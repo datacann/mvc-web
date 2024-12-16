@@ -1,14 +1,12 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzMessageModule } from 'ng-zorro-antd/message';
-import { NZ_ICONS, NzIconService } from 'ng-zorro-antd/icon';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { NzIconService} from 'ng-zorro-antd/icon';
+import { routes } from './app.routes';
+import {FormsModule} from '@angular/forms';
+import {NzToolTipModule} from 'ng-zorro-antd/tooltip';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,7 +16,7 @@ export const appConfig: ApplicationConfig = {
     NzModalModule,
     NzMessageModule,
     NzIconService,
-    // Animasyon modülleri burada
-    // NoopAnimationsModule,   // Animasyonları devre dışı bırakmak için
+    FormsModule,
+    NzToolTipModule
   ]
 };

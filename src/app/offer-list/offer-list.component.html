@@ -1,0 +1,19 @@
+<nz-table #basicTable [nzData]="savedData" [nzBordered]="true" [nzSize]="'middle'" [nzScroll]="{ x: '100%' }">
+  <thead>
+  <tr>
+    <th *ngFor="let header of tableHeaders">{{ header | uppercase }}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of savedData">
+    <td>{{ data.modes || 'N/A' }}</td>
+    <td>{{ data.movementTypes || 'N/A' }}</td>
+    <td>{{ data.incoterms || 'N/A' }}</td>
+    <td>{{ data.packageTypes || 'N/A' }}</td>
+    <td>{{ data.units1 || 'N/A' }}</td>
+    <td>{{ data.units2 || 'N/A' }}</td>
+    <td>{{ data.currency || 'N/A' }}</td>
+
+  </tr>
+  </tbody>
+</nz-table>

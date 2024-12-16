@@ -1,0 +1,20 @@
+<div *ngFor="let dropdown of dropdownArray">
+  <span class="info-place" nz-icon nzType="info-circle" nzTheme="outline"  nz-popover  [nzPopoverContent]="explanations[dropdown.dataKey] || 'No explanation available'" nzPopoverTrigger="hover">
+  </span>
+  <button nz-button nz-dropdown [nzDropdownMenu]="menu" class="dropdown-btn">
+    {{ dropdown.label }}:
+    <span nz-icon nzType="down"></span>
+  </button>
+  <label *ngIf="selectedItemsDr[dropdown.dataKey]" class="selected-item-label">
+    {{ selectedItemsDr[dropdown.dataKey] }}
+  </label>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item *ngFor="let item of dropdown.items" (click)="onSelect(dropdown.dataKey, item)">
+        {{ item }}
+      </li>
+    </ul>
+  </nz-dropdown-menu>
+</div>
+<button nz-button nzType="primary" (click)="onSave()" class="save-btn">Save</button>
+

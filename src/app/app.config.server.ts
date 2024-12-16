@@ -11,12 +11,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 const serverConfig: ApplicationConfig = {
   providers: [
-
-      NzButtonModule,               // Button modülünü ekliyoruz
-      NzModalModule,                // Modal modülünü ekliyoruz
-      NzMessageModule,              // Message modülünü ekliyoruz
-      NzIconService,                // Icon servisi
-      
+      NzButtonModule,
+      NzModalModule,
+      NzMessageModule,
+      NzIconService,
     ]
 };
 
